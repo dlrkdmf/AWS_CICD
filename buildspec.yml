@@ -5,6 +5,4 @@ phases:
       - aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 905944532563.dkr.ecr.ap-northeast-2.amazonaws.com
       - docker build -t cicd .
       - docker tag cicd:latest 905944532563.dkr.ecr.ap-northeast-2.amazonaws.com/cicd:latest
-      - docker push 905944532563.dkr.ecr.ap-northeast-2.amazonaws.com/cicd:latest > imagedefinitions.json
-artifacts:
-	files: imagedefinitions.json
+      - docker push 905944532563.dkr.ecr.ap-northeast-2.amazonaws.com/cicd:latest 
