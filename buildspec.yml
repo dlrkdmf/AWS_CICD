@@ -6,3 +6,6 @@ phases:
       - docker build -t cicd .
       - docker tag cicd:latest 905944532563.dkr.ecr.ap-northeast-2.amazonaws.com/cicd:latest
       - docker push 905944532563.dkr.ecr.ap-northeast-2.amazonaws.com/cicd:latest 
+      - printf '[{"name":"myWeb","imageUri":"%s"}]' 905944532563.dkr.ecr.ap-northeast-2.amazonaws.com/cicd:latest > imagedefinitions.json
+artifacts:
+  files: imagedefinitions.json
